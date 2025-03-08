@@ -39,7 +39,7 @@ app.get("/giveName", async(req, res) => {
         // Create new user with UID
         const newUser = new User({ username:username,uid: uid });
         await newUser.save();
-
+        res.end();
     } catch (error) {
         console.log(error);
         res.status(500).json({ error: "Server error" });
